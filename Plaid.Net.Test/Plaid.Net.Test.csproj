@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF128427-318D-4EFF-AD8C-055C81492089}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{92CBBB9F-9BAD-4DCE-896E-BCE0015129C7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plaid.Net</RootNamespace>
-    <AssemblyName>Plaid.Net</AssemblyName>
+    <RootNamespace>Plaid.Net.Test</RootNamespace>
+    <AssemblyName>Plaid.Net.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,14 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,35 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Institutions.cs" />
-    <Compile Include="IPlaidPublicClient.cs" />
-    <Compile Include="IPlaidUserClient.cs" />
-    <Compile Include="Models\HttpStatusCodes.cs" />
-    <Compile Include="PlaidClients.cs" />
-    <Compile Include="PlaidPublicClient.cs" />
-    <Compile Include="PlaidUserClient.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="request\ConnectOptions.cs" />
-    <Compile Include="request\Credentials.cs" />
-    <Compile Include="response\Account.cs" />
-    <Compile Include="response\AccountsResponse.cs" />
-    <Compile Include="response\CategoriesResponse.cs" />
-    <Compile Include="response\Category.cs" />
-    <Compile Include="response\ErrorResponse.cs" />
-    <Compile Include="response\ExchangeToken.cs" />
-    <Compile Include="response\InfoResponse.cs" />
-    <Compile Include="response\Institution.cs" />
-    <Compile Include="response\InstitutionsResponse.cs" />
-    <Compile Include="response\MessageResponse.cs" />
-    <Compile Include="response\MfaResponse.cs" />
-    <Compile Include="response\PlaidUserResponse.cs" />
-    <Compile Include="response\Transaction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="exception\" />
+    <ProjectReference Include="..\Plaid.Net\Plaid.Net.csproj">
+      <Project>{ef128427-318d-4eff-ad8c-055c81492089}</Project>
+      <Name>Plaid.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

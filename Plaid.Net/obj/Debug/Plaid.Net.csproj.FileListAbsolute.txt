@@ -7,3 +7,12 @@ C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\Plaid.Net\bin\Debug\RestSh
 C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\Plaid.Net\obj\Debug\Plaid.Net.csprojResolveAssemblyReference.cache
 C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\Plaid.Net\obj\Debug\Plaid.Net.dll
 C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\Plaid.Net\obj\Debug\Plaid.Net.pdb
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\obj\Debug\Plaid.Net.csprojResolveAssemblyReference.cache
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\obj\Debug\Plaid.Net.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\obj\Debug\Plaid.Net.pdb
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\bin\Debug\Plaid.Net.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\bin\Debug\Plaid.Net.pdb
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\bin\Debug\RestSharp.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net\bin\Debug\RestSharp.xml

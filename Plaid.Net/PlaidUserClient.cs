@@ -78,11 +78,6 @@ namespace Plaid.Net
             });
             request.Parameters.Add(new Parameter
             {
-                Name = "access_token",
-                Value = _accessToken
-            });
-            request.Parameters.Add(new Parameter
-            {
                 Name = "username",
                 Value = credentials.UserName
             });
@@ -116,7 +111,7 @@ namespace Plaid.Net
 
             if ((int) response.StatusCode == (int) HttpStatusCodes.MfaRequired)
             {
-                return MfaConnectStep(mfa, type);
+                return MfaConnectStep(mfa, type, connectOptions);
             }
             if ((int) response.StatusCode == (int) HttpStatusCodes.Success)
             {
@@ -126,11 +121,40 @@ namespace Plaid.Net
             throw new Exception("Neither MFA or Non MFA response");
         }
 
-        public ConnectResponse MfaConnectStep(string mfa, string type)
+        public AccountsResponse MfaConnectStep(string mfa, string type, ConnectOptions connectOptions)
         {
-            //return handleMfa("/connect/step", mfa, type, ConnectResponse.class)
-           // ;
-            return null;
+            var request = new RestRequest("/connect/step", Method.POST);
+            request.Parameters.Add(new Parameter
+            {
+                Name = "client_id",
+                Value = _clientId
+            });
+            request.Parameters.Add(new Parameter
+            {
+                Name = "secret",
+                Value = _secret
+            });
+            request.Parameters.Add(new Parameter
+            {
+                Name = "access_token",
+                Value = _accessToken
+            });
+            request.Parameters.Add(new Parameter
+            {
+                Name = "type",
+                Value = type
+            });
+            request.Parameters.Add(new Parameter
+            {
+                Name = "mfa",
+                Value = mfa
+            });
+
+            request.AddBody(new ConnectOptions(true));
+
+            var response = Client.Execute(request);
+
+            return new AccountsResponse(response);
         }
 
         //public AccountsResponse achAuth(Credentials credentials, String type, ConnectOptions connectOptions)

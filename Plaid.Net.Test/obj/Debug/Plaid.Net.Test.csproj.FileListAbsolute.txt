@@ -1,0 +1,12 @@
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Plaid.Net.Test.exe.config
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Plaid.Net.Test.exe
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Plaid.Net.Test.pdb
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Plaid.Net.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\RestSharp.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Plaid.Net.pdb
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\RestSharp.xml
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\obj\Debug\Plaid.Net.Test.csprojResolveAssemblyReference.cache
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\obj\Debug\Plaid.Net.Test.exe
+C:\Users\kabatta\Documents\GitHub\Plaid.Net\Plaid.Net.Test\obj\Debug\Plaid.Net.Test.pdb

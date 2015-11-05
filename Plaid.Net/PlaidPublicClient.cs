@@ -5,13 +5,13 @@ namespace Plaid.Net
 {
     public class PlaidPublicClient : IPlaidPublicClient
     {
-        public RestClient Client;
+        private readonly RestClient _client;
         public static string BaseUriProduction = "https://api.plaid.com";
         public static string BaseUriTest = "https://tartan.plaid.com";
 
-        private PlaidPublicClient()
+        public PlaidPublicClient()
         {
-            Client = new RestClient(BaseUriTest);
+            _client = new RestClient(BaseUriTest);
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Plaid.Net
         public InstitutionsResponse GetAllInstitutions()
         {
             var request = new RestRequest("/institutions", Method.GET);
-            var response = Client.Execute(request);
+            var response = _client.Execute(request);
             return new InstitutionsResponse(response);
         }
 
@@ -33,7 +33,7 @@ namespace Plaid.Net
         public CategoriesResponse GetAllCategories()
         {
             var request = new RestRequest("/categories", Method.GET);
-            var response = Client.Execute(request);
+            var response = _client.Execute(request);
             return new CategoriesResponse(response);
         }
     }
