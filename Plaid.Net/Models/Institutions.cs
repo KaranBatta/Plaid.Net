@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Plaid.Net.institutions
+namespace Plaid.Net.Models
 {
     public class Institutions
     {

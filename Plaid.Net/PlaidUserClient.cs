@@ -1,5 +1,5 @@
 ﻿using System;
-using Plaid.Net.institutions;
+using Plaid.Net.Models;
 using Plaid.Net.request;
 using Plaid.Net.response;
 using RestSharp;
@@ -61,7 +61,7 @@ namespace Plaid.Net
             return responseObject;
         }
 
-        public ConnectResponse AuthenticateUser(Credentials credentials, string type, ConnectOptions connectOptions)
+        public AccountsResponse AuthenticateUser(Credentials credentials, string type, string mfa, ConnectOptions connectOptions)
         {
             var institutions = new InstitutionCategory(new Institutions());
 
@@ -110,13 +110,20 @@ namespace Plaid.Net
                 Value = type
             });
 
-            
-
             request.AddBody(new ConnectOptions(true));
 
             var response = Client.Execute(request);
 
-            return new ConnectResponse();
+            if ((int) response.StatusCode == (int) HttpStatusCodes.MfaRequired)
+            {
+                return MfaConnectStep(mfa, type);
+            }
+            if ((int) response.StatusCode == (int) HttpStatusCodes.Success)
+            {
+                return new AccountsResponse(response);
+            }
+
+            throw new Exception("Neither MFA or Non MFA response");
         }
 
         public ConnectResponse MfaConnectStep(string mfa, string type)

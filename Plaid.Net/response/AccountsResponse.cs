@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace Plaid.Net.response
 {
-    //public class AccountsResponse : PlaidUserResponse
-    //{
+    public class AccountsResponse
+    {
+        private readonly IRestResponse _response;
 
-    //    //protected List<Account> Accounts;
+        public AccountsResponse(IRestResponse response)
+        {
+            _response = response;
+        }
 
-    //    //public List<Account> GetAccounts()
-    //    //{
-    //    //    return Accounts;
-    //    //}
-
-    //    //public void SetAccounts(List<Account> accounts)
-    //    //{
-    //    //    Accounts = accounts;
-    //    //}
-    //}
+        public List<Account> GetAccounts()
+        {
+            return JsonConvert.DeserializeObject<List<Account>>(_response.Content);
+        }
+    }
 }

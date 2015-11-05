@@ -1,217 +1,52 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Plaid.Net.response
 {
     public class Account
     {
         [JsonProperty("_id")]
-        private String _id;
+        public string Id { get; set; }
         
         [JsonProperty("_item")]
-        private String _item;
+        public string Item { get; set; }
 
         [JsonProperty("_user")]
-        private String _userId;
+        public string UserId { get; set; }
 
-        private Balance _balance;
-        private AccountMeta _meta;
-        private AccountNumbers _numbers;
+        [JsonProperty("balance")]
+        public Balance AccountBalance { get; set; }
 
         [JsonProperty("institution_type")]
-        private String _institutionType;
+        public string InstitutionType { get; set; }
+        
+        [JsonProperty("meta")]
+        public Meta AccountMeta { get; set; }
+        
+        [JsonProperty("subtype")]
+        public string SubType { get; set; }
 
-        private String _type;
-        private String _subtype;
- 
-        public String GetId()
-        {
-            return _id;
-        }
-
-        public void SetId(String id)
-        {
-            _id = id;
-        }
-
-        public String GetItem()
-        {
-            return _item;
-        }
-
-        public void SetItem(String item)
-        {
-            _item = item;
-        }
-
-        public String GetUserId()
-        {
-            return _userId;
-        }
-
-        public void SetUserId(String userId)
-        {
-            _userId = userId;
-        }
-
-        public Balance GetBalance()
-        {
-            return _balance;
-        }
-
-        public void SetBalance(Balance balance)
-        {
-            _balance = balance;
-        }
-
-        public AccountMeta GetMeta()
-        {
-            return _meta;
-        }
-
-        public void SetMeta(AccountMeta meta)
-        {
-            _meta = meta;
-        }
-
-        public AccountNumbers GetNumbers()
-        {
-            return _numbers;
-        }
-
-        public void SetNumbers(AccountNumbers numbers)
-        {
-            _numbers = numbers;
-        }
-
-        public String GetInstitutionType()
-        {
-            return _institutionType;
-        }
-
-        public void SetInstitutionType(String institutionType)
-        {
-            _institutionType = institutionType;
-        }
-
-        public String GetType()
-        {
-            return _type;
-        }
-
-        public void SetType(String type)
-        {
-            _type = type;
-        }
-
-        public String GetSubtype()
-        {
-            return _subtype;
-        }
-
-        public void DetSubtype(String subtype)
-        {
-            _subtype = subtype;
-        }
+        [JsonProperty("type")]
+        public string Type { get; set; }
 
         public class Balance
         {
-            private Double _available;
-            private Double _current;
+            [JsonProperty("available")]
+            public double Available { get; set; }
 
-            public Double GetAvailable()
-            {
-                return _available;
-            }
-
-            public void SetAvailable(Double available)
-            {
-                _available = available;
-            }
-
-            public Double GetCurrent()
-            {
-                return _current;
-            }
-
-            public void SetCurrent(Double current)
-            {
-                _current = current;
-            }
+            [JsonProperty("current")]
+            public double Current { get; set; }
         }
 
-        public class AccountMeta
+        public class Meta
         {
-            private Double _limit;
-            private String _name;
-            private String _number;
+            [JsonProperty("limit")]
+            public double Limit { get; set; }
 
-            public Double GetLimit()
-            {
-                return _limit;
-            }
+            [JsonProperty("name")]
+            public string Name { get; set; }
 
-            public void SetLimit(Double limit)
-            {
-                _limit = limit;
-            }
-
-            public String GetName()
-            {
-                return _name;
-            }
-
-            public void SetName(String name)
-            {
-                _name = name;
-            }
-
-            public String GetNumber()
-            {
-                return _number;
-            }
-
-            public void SetNumber(String number)
-            {
-                _number = number;
-            }
-        }
-
-        public class AccountNumbers
-        {
-            private String _routing;
-            private String _account;
-            private String _wireRouting;
-
-            public String GetRouting()
-            {
-                return _routing;
-            }
-
-            public void SetRouting(String routing)
-            {
-                this._routing = routing;
-            }
-
-            public String GetAccount()
-            {
-                return _account;
-            }
-
-            public void SetAccount(String account)
-            {
-                _account = account;
-            }
-
-            public String GetWireRouting()
-            {
-                return _wireRouting;
-            }
-
-            public void SetWireRouting(String wireRouting)
-            {
-                _wireRouting = wireRouting;
-            }
+            [JsonProperty("number")]
+            public string Number { get; set; }
         }
     }
 }

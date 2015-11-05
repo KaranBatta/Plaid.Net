@@ -1,19 +1,40 @@
-﻿using System.Collections.Generic;
+﻿using System.Runtime;
+using Plaid.Net.Models;
+using RestSharp;
 
 namespace Plaid.Net.response
 {
-    public class ConnectResponse /*: AccountsResponse */
+    public class ConnectResponse
     {
-        protected List<Transaction> Transactions;
+        private IRestResponse _response;
+        private readonly string _type;
 
-        public List<Transaction> GetTransactions()
+        public ConnectResponse(string type, IRestResponse response)
         {
-            return Transactions;
+            _response = response;
+            _type = type;
         }
 
-        public void SetTransactions(List<Transaction> transactions)
+        public void GetResponse()
         {
-            Transactions = transactions;
+            var institutions = new InstitutionCategory(new Institutions());
+            foreach (var inst in institutions.MfaInstitutions())
+            {
+                if (_type.Equals(inst))
+                {
+                    return MfaInfo();
+                }
+            }
+        }
+
+        public Accounts AccountList()
+        {
+            
+        }
+
+        public MfaStep MfaInfo()
+        {
+            
         }
     }
 }
