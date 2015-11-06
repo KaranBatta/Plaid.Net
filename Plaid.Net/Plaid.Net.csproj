@@ -54,7 +54,6 @@
     <Compile Include="IPlaidPublicClient.cs" />
     <Compile Include="IPlaidUserClient.cs" />
     <Compile Include="Models\HttpStatusCodes.cs" />
-    <Compile Include="PlaidClients.cs" />
     <Compile Include="PlaidPublicClient.cs" />
     <Compile Include="PlaidUserClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,14 +64,10 @@
     <Compile Include="response\CategoriesResponse.cs" />
     <Compile Include="response\Category.cs" />
     <Compile Include="response\ConnectResponse.cs" />
-    <Compile Include="response\ErrorResponse.cs" />
     <Compile Include="response\ExchangeToken.cs" />
-    <Compile Include="response\InfoResponse.cs" />
     <Compile Include="response\Institution.cs" />
     <Compile Include="response\InstitutionsResponse.cs" />
-    <Compile Include="response\MessageResponse.cs" />
-    <Compile Include="response\MfaResponse.cs" />
-    <Compile Include="response\PlaidUserResponse.cs" />
+    <Compile Include="response\TokenResponse.cs" />
     <Compile Include="response\Transaction.cs" />
     <Compile Include="response\TransactionsResponse.cs" />
   </ItemGroup>

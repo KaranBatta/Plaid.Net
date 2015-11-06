@@ -34,7 +34,7 @@ namespace Plaid.Net
             return _accessToken;
         }
 
-        public PlaidUserResponse ExchangeToken(string publicToken)
+        public TokenResponse ExchangeToken(string publicToken)
         {
             var request = new RestRequest("/exchange_token", Method.POST);
             request.Parameters.Add(new Parameter
@@ -54,7 +54,7 @@ namespace Plaid.Net
             });
 
             var response = Client.Execute(request);
-            var responseObject = new PlaidUserResponse(response);
+            var responseObject = new TokenResponse(response);
 
             SetAccessToken(responseObject.GetAccessTokenObject().AccessToken);
 

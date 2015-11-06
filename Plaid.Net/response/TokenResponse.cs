@@ -3,11 +3,11 @@ using RestSharp;
 
 namespace Plaid.Net.response
 {
-    public class PlaidUserResponse
+    public class TokenResponse
     {
         private readonly IRestResponse _response;
 
-        public PlaidUserResponse(IRestResponse response)
+        public TokenResponse(IRestResponse response)
         {
             _response = response;
         }
