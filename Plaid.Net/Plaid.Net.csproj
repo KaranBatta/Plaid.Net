@@ -34,6 +34,8 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -45,6 +47,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Institutions.cs" />
@@ -61,6 +64,7 @@
     <Compile Include="response\AccountsResponse.cs" />
     <Compile Include="response\CategoriesResponse.cs" />
     <Compile Include="response\Category.cs" />
+    <Compile Include="response\ConnectResponse.cs" />
     <Compile Include="response\ErrorResponse.cs" />
     <Compile Include="response\ExchangeToken.cs" />
     <Compile Include="response\InfoResponse.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="response\MfaResponse.cs" />
     <Compile Include="response\PlaidUserResponse.cs" />
     <Compile Include="response\Transaction.cs" />
+    <Compile Include="response\TransactionsResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

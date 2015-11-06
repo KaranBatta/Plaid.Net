@@ -8,8 +8,8 @@ namespace Plaid.Net
         void SetAccessToken(string accesstoken);
         string GetAccessToken();
         PlaidUserResponse ExchangeToken(string publicToken);
-        AccountsResponse AuthenticateUser(Credentials credentials, string type, string mfa, ConnectOptions connectOptions);
-        AccountsResponse MfaConnectStep(string mfa, string type, ConnectOptions connectOptions);
+        ConnectResponse AuthenticateUser(Credentials credentials, string type, string mfa, ConnectOptions connectOptions);
+        ConnectResponse MfaConnectStep(string mfa, string type, ConnectOptions connectOptions);
         //AccountsResponse AchAuth(Credentials credentials, string type, ConnectOptions connectOptions);
         //AccountsResponse MfaAuthStep(string mfa, string type);
         //AccountsResponse MfaAuthDeviceSelectionByDeviceType(string deviceType, string type);

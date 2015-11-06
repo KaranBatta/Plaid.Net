@@ -61,7 +61,7 @@ namespace Plaid.Net
             return responseObject;
         }
 
-        public AccountsResponse AuthenticateUser(Credentials credentials, string type, string mfa, ConnectOptions connectOptions)
+        public ConnectResponse AuthenticateUser(Credentials credentials, string type, string mfa, ConnectOptions connectOptions)
         {
             var institutions = new InstitutionCategory(new Institutions());
 
@@ -105,7 +105,7 @@ namespace Plaid.Net
                 Value = type
             });
 
-            request.AddBody(new ConnectOptions(true));
+            request.AddBody(connectOptions);
 
             var response = Client.Execute(request);
 
@@ -115,13 +115,13 @@ namespace Plaid.Net
             }
             if ((int) response.StatusCode == (int) HttpStatusCodes.Success)
             {
-                return new AccountsResponse(response);
+                return new ConnectResponse(response);
             }
 
             throw new Exception("Neither MFA or Non MFA response");
         }
 
-        public AccountsResponse MfaConnectStep(string mfa, string type, ConnectOptions connectOptions)
+        public ConnectResponse MfaConnectStep(string mfa, string type, ConnectOptions connectOptions)
         {
             var request = new RestRequest("/connect/step", Method.POST);
             request.Parameters.Add(new Parameter
@@ -150,11 +150,11 @@ namespace Plaid.Net
                 Value = mfa
             });
 
-            request.AddBody(new ConnectOptions(true));
+            request.AddBody(connectOptions);
 
             var response = Client.Execute(request);
 
-            return new AccountsResponse(response);
+            return new ConnectResponse(response);
         }
 
         //public AccountsResponse achAuth(Credentials credentials, String type, ConnectOptions connectOptions)
